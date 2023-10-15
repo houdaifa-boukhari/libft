@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:10:31 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/11 17:30:28 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/15 09:48:13 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	count_words(char *str, char c)
 	return (count);
 }
 
-void	free_str(char **str , int lenght)
+void	free_str(char **str, int lenght)
 {
 	int	i;
 
@@ -72,12 +72,12 @@ char	**ft_split(char const *s, char c)
 	int	start;
 	int	end;
 	int	word_lenght;
-	char **str;
-	
+	char		**str;
+
 	i = 0;
 	end = 0;
 	start = 0;
-	nbr_word = count_words((char *)s,c);
+	nbr_word = count_words((char *)s, c);
 	str = (char **)malloc(sizeof(char *) * (nbr_word + 1));
 	if (str == NULL)
 		return (NULL);
@@ -105,7 +105,8 @@ char	**ft_split(char const *s, char c)
 	return (str);
 }
 
-int main() {
+/*int	main()
+{
     const char *input_string = "Hello,World,Split,Example";
     char delimiter = ',';
 
@@ -125,4 +126,4 @@ int main() {
     }
 
     return 0;
-}
+}*/

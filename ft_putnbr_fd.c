@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/03 05:47:35 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/14 17:50:30 by hel-bouk         ###   ########.fr       */
+/*   Created: 2023/10/15 13:23:00 by hel-bouk          #+#    #+#             */
+/*   Updated: 2023/10/15 13:42:46 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	while (*s != '\0')
+	long	nb;
+	char	digite;
+
+	nb = (long)n;
+	if (nb < 0)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		nb *= -1;
+		write(fd, "-", 1);
 	}
-	return (NULL);
+	if (nb >= 10)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+	{
+		digite = nb + 48;
+		write(fd, &digite, 1);
+	}
 }
