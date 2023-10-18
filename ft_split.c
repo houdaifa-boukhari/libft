@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:10:31 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/15 09:48:13 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/17 09:55:47 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,10 +107,7 @@ char	**ft_split(char const *s, char c)
 
 /*int	main()
 {
-    const char *input_string = "Hello,World,Split,Example";
-    char delimiter = ',';
-
-    char **result = ft_split(input_string, delimiter);
+    char **result = ft_split("lorem ipsum dolor sit amet, consectetur adipis    cing elit. Sed non risus. Suspendisse", ' ');
 
     if (result) {
         int i = 0;

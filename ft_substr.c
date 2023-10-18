@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_subst.c                                         :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:34:51 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/08 10:37:47 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/16 16:38:15 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		len = 0;
 	else if (len > (lenght_src - start))
 		lenght_sub = lenght_src - start + 1;
+	else
+		lenght_sub = len + 1;
 	i = 0;
 	sub = (char *)malloc(sizeof(char) * lenght_sub);
 	if (sub == NULL)

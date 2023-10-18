@@ -6,13 +6,13 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:21:24 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/10 13:52:30 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/15 16:28:36 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+int	len(char *str)
 {
 	int	i;
 
@@ -43,7 +43,7 @@ char	*ft_strdup(const char *src)
 
 	if (src == NULL)
 		return (NULL);
-	i = ft_strlen((char *)src) + 1;
+	i = len((char *)src) + 1;
 	dest = (char *)malloc(sizeof(char) * i);
 	if (dest != NULL)
 		ft_strcpy(dest, src);

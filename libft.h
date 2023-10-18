@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 14:29:42 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/15 13:44:30 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/17 18:28:53 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,21 @@
 # include <string.h>
 # include <stdint.h>
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}			t_list;
+
 void	*ft_memset(void *s, int c, size_t n);
 int		ft_isalpha(int c);
 int		ft_isprint(int c);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	ft_bzero(void *s, size_t n);
-int		ft_strlen(char *str);
 int		ft_isascii(int c);
 char	*ft_strdup(const char *src);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+size_t	ft_strlen(const char *str);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size_dest);
 char	*ft_strnstr(const char *str, const char *find, size_t n);
 int		ft_atoi(const char *str);
@@ -52,5 +58,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putendl_fd(char *s, int fd);
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif

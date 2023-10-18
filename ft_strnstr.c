@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:02:55 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/05 14:44:54 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/16 16:18:29 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strnstr(const char *str, const char *find, size_t n)
 	while (str[i] != '\0' && n > i)
 	{
 		j = 0;
-		while (str[i + j] == find[j])
+		while (str[i + j] == find[j] && n > i + j)
 		{
 			if (find[j + 1] == '\0')
 			{

@@ -6,15 +6,15 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:52:00 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/05 14:38:28 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/15 16:24:34 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
