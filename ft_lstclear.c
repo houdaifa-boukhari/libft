@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 18:19:56 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/17 18:39:33 by hel-bouk         ###   ########.fr       */
+/*   Created: 2023/10/18 11:57:46 by hel-bouk          #+#    #+#             */
+/*   Updated: 2023/10/18 13:45:48 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	if (!lst || !new)
-		return;
-	new = next -> *lst;
-	*lst -> new;
+	if(!(*lst) || !lst || !del)
+		return ;
+	//recurcive the last node
+	ft_strclear(&(*lst) -> next,del);
+	
+	(del)(*lst->content);
+	free(*lst);
+	*lst = NULL;
 }
