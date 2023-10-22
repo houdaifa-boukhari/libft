@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:34:51 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/22 12:26:23 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:40:43 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (sub == NULL)
 		return (NULL);
 	while (*s != '\0' && i < len)
-	{
-		sub[i] = s[start];
-		i++;
-		start++;
-	}
+		sub[i++] = s[start++];
 	sub[i] = '\0';
 	return (sub);
 }

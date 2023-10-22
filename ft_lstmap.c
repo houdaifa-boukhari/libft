@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 17:26:41 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/22 11:02:32 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:34:37 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,6 @@ static t_list	*lstnew(void *content)
 	head->content = content;
 	head->next = NULL;
 	return (head);
-}
-
-static void	lstclear(t_list **lst, void(*del)(void*))
-{
-	if (!*lst || !del || !lst)
-		return ;
-	lstclear(&(*lst)->next, del);
-	(del)((*lst)->content);
-	free(*lst);
-	*lst = NULL;
 }
 
 static void	lstadd_back(t_list **lst, t_list *new)
@@ -68,7 +58,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		if (!new_node)
 		{
 			del(data);
-			lstclear(&new_lst, (*del));
+			ft_lstclear(&new_lst, (*del));
 			return (new_lst);
 		}
 		lstadd_back(&new_lst, new_node);

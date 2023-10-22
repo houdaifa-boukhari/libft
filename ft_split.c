@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:10:31 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/22 21:40:05 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/22 22:12:44 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	free_str(char **str, int lenght)
 	}
 }
 
-size_t word_lenght(char const *s, char c)
+size_t	word_lenght(char const *s, char c)
 {
 	size_t	i;
 
@@ -56,10 +56,10 @@ size_t word_lenght(char const *s, char c)
 	return (i);
 }
 
-char **alocation_split(char const *str, char c, char **new_str, size_t nbr_word)
+char	**aloc_split(char const *str, char c, char **new_str, size_t nbr_word)
 {
-	size_t i;
-	size_t start;
+	size_t	i;
+	size_t	start;
 
 	i = 0;
 	start = 0;
@@ -71,9 +71,9 @@ char **alocation_split(char const *str, char c, char **new_str, size_t nbr_word)
 		if (!new_str[i])
 		{
 			free_str(new_str, i);
-			return(NULL);
+			return (NULL);
 		}
-		start += word_lenght(str + start,c);
+		start += word_lenght(str + start, c);
 		while (str[start] != '\0' && str[start] == c)
 			start++;
 		i++;
@@ -84,8 +84,8 @@ char **alocation_split(char const *str, char c, char **new_str, size_t nbr_word)
 
 char	**ft_split(char const *s, char c)
 {
-	int	nbr_words;
-	char **str;
+	char	**str;
+	int		nbr_words;
 
 	if (!s || s[0] == '\0')
 	{
@@ -95,12 +95,11 @@ char	**ft_split(char const *s, char c)
 		str[0] = NULL;
 		return (str);
 	}
-
 	nbr_words = count_words(s, c);
 	str = (char **)malloc(sizeof(char *) * (nbr_words + 1));
 	if (!str)
 		return (NULL);
-	str = alocation_split(s, c, str, nbr_words);
+	str = aloc_split(s, c, str, nbr_words);
 	return (str);
 }
 
