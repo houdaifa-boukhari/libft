@@ -6,13 +6,13 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:10:31 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/17 09:55:47 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/22 21:40:05 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_words(char *str, char c)
+int	count_words(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -23,7 +23,7 @@ int	count_words(char *str, char c)
 		count++;
 	while (str[i] != '\0')
 	{
-		if (str[i] == c && str[i + 1] != c)
+		if (str[i] == c && (str[i + 1] != c && str[i + 1] != '\0'))
 			count++;
 		i++;
 	}
@@ -46,68 +46,67 @@ void	free_str(char **str, int lenght)
 	}
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t word_lenght(char const *s, char c)
 {
-	unsigned char	*dst;
-	unsigned char	*sourc;
-	size_t			i;
+	size_t	i;
 
-	sourc = (unsigned char *)src;
-	dst = (unsigned char *)dest;
-	if (!dst && !sourc)
-		return (dst);
 	i = 0;
-	while (n > i)
+	while (s[i] != '\0' && s[i] != c)
+		i++;
+	return (i);
+}
+
+char **alocation_split(char const *str, char c, char **new_str, size_t nbr_word)
+{
+	size_t i;
+	size_t start;
+
+	i = 0;
+	start = 0;
+	while (i < nbr_word)
 	{
-		dst[i] = sourc[i];
+		while (str[start] != '\0' && str[start] == c)
+			start++;
+		new_str[i] = ft_substr(str, start, word_lenght(str + start, c));
+		if (!new_str[i])
+		{
+			free_str(new_str, i);
+			return(NULL);
+		}
+		start += word_lenght(str + start,c);
+		while (str[start] != '\0' && str[start] == c)
+			start++;
 		i++;
 	}
-	return (dst);
+	new_str[i] = NULL;
+	return (new_str);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int	nbr_word;
-	int	i;
-	int	start;
-	int	end;
-	int	word_lenght;
-	char		**str;
+	int	nbr_words;
+	char **str;
 
-	i = 0;
-	end = 0;
-	start = 0;
-	nbr_word = count_words((char *)s, c);
-	str = (char **)malloc(sizeof(char *) * (nbr_word + 1));
-	if (str == NULL)
-		return (NULL);
-	while (s[end])
+	if (!s || s[0] == '\0')
 	{
-		start = end;
-		if (s[end] != c)
-		{
-			while (s[end] != c && s[end] != '\0')
-				end++;
-			word_lenght = end - start;
-			str[i] = (char *)malloc(sizeof(char) * word_lenght + 1);
-			if (!str[i])
-			{
-				free_str(str, i);
-				return (NULL);
-			}
-			ft_memcpy(str[i], &s[start], word_lenght);
-			i++;
-		}
-		else
-			end++;
+		str = (char **)malloc(sizeof(char *));
+		if (!str)
+			return (NULL);
+		str[0] = NULL;
+		return (str);
 	}
-	str[i] = NULL;
+
+	nbr_words = count_words(s, c);
+	str = (char **)malloc(sizeof(char *) * (nbr_words + 1));
+	if (!str)
+		return (NULL);
+	str = alocation_split(s, c, str, nbr_words);
 	return (str);
 }
 
 /*int	main()
 {
-    char **result = ft_split("lorem ipsum dolor sit amet, consectetur adipis    cing elit. Sed non risus. Suspendisse", ' ');
+    char **result = ft_split("", 'z');
 
     if (result) {
         int i = 0;

@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 12:34:51 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/16 16:38:15 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/22 12:26:23 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	lenght_src = lenght((char *)s);
-	if (start > lenght_src)
+	if (start >= lenght_src)
 		len = 0;
-	else if (len > (lenght_src - start))
+	if (len > (lenght_src - start))
 		lenght_sub = lenght_src - start + 1;
 	else
 		lenght_sub = len + 1;
@@ -43,7 +43,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub = (char *)malloc(sizeof(char) * lenght_sub);
 	if (sub == NULL)
 		return (NULL);
-	while (s[start] != '\0' && i < len)
+	while (*s != '\0' && i < len)
 	{
 		sub[i] = s[start];
 		i++;
