@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 11:52:00 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/15 16:24:34 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/10/29 21:03:12 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ size_t	ft_strlen(const char *str)
 	i = 0;
 	while (str[i])
 		i++;
-	return (0);
+	return (i);
 }
