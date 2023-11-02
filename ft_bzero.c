@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 17:03:56 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/05 14:37:41 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/11/02 12:45:59 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;
-	char	*str;
+	unsigned char	*str;
 
-	str = (char *)s;
+	str = (unsigned char *)s;
 	i = 0;
 	while (n > i)
 	{
-		str[i] = '\0';
+		str[i] = '0';
 		i++;
 	}
 }
