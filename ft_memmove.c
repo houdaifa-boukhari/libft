@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:41:32 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/10/08 09:10:23 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:28:32 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 			dst[n] = sourc[n];
 	}
 	else
-	{
-		while (n > i)
-		{
-			dst[i] = sourc[i];
-			i++;
-		}
-	}
+		ft_memcpy(dest, src, n);
 	return (dst);
 }

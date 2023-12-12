@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 06:03:56 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/12/06 21:48:28 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/12/12 18:57:58 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+/*int main()
+{
+	int tab[5] = {1,2,3,4,5};
+	int *tab1 = memchr(tab, 3, 5 * sizeof(int));
+	printf ("%zu\n", sizeof(tab1));
+	for (int i = 0; i < 3 ; i++)
+		printf("%d ", tab1[i]);
+}*/

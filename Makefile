@@ -6,7 +6,7 @@
 #    By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/21 10:25:31 by hel-bouk          #+#    #+#              #
-#    Updated: 2023/12/10 16:57:40 by hel-bouk         ###   ########.fr        #
+#    Updated: 2023/12/12 19:39:15 by hel-bouk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ $(NAME) : $(OBJS)
 bonus : $(BONUS_OBJS)
 	    @ar rcs $(NAME) $(BONUS_OBJS)
 clean :
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 fclean : clean
 	 $(RM) $(NAME)
 re : fclean all

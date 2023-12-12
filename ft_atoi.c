@@ -6,15 +6,17 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 14:11:15 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/12/11 22:53:22 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/12/12 13:47:37 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+#define LLONG_MAX 9223372036854775807
+
 static int	check(unsigned long nb, int n, int signe)
 {
-	if (nb >= LONG_MAX / 10 && n > 7)
+	if (nb >= LLONG_MAX / 10 && n > 7)
 	{
 		if (signe > 0)
 			return (-1);
@@ -26,9 +28,9 @@ static int	check(unsigned long nb, int n, int signe)
 
 int	convert(const char *str, int signe)
 {
-	int	i;
-	int	cheack;
-	int	result;
+	int				i;
+	int				cheack;
+	unsigned long	result;
 
 	i = 0;
 	result = 0;
@@ -42,7 +44,7 @@ int	convert(const char *str, int signe)
 			return (cheack);
 		i++;
 	}
-	return (result * signe);
+	return ((int)result * signe);
 }
 
 int	ft_atoi(const char *str)
