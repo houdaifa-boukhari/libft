@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 11:37:54 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/12/12 21:56:45 by hel-bouk         ###   ########.fr       */
+/*   Created: 2023/12/06 11:37:54 by hel-bouk          #+#    #+#             */
+/*   Updated: 2023/12/15 15:52:53 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 /*void upper(unsigned int i, char *str)
