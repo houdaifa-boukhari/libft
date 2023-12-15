@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 14:11:15 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/12/15 15:46:14 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/12/15 17:30:13 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	check(unsigned long nb, int n, int signe)
 	return (1);
 }
 
-int	convert(const char *str, int signe)
+static int	convert(const char *str, int signe)
 {
 	int				i;
 	int				cheack;

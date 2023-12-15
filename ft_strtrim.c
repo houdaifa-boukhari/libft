@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 19:49:03 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/12/06 20:08:33 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/12/15 17:30:48 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check(char c, char *delim)
+static int	check(char c, char *delim)
 {
 	while (*delim)
 	{

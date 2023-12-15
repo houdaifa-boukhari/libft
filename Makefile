@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+         #
+#    By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/10 10:25:31 by hel-bouk          #+#    #+#              #
-#    Updated: 2023/12/14 11:23:27 by hel-bouk         ###   ########.fr        #
+#    Updated: 2023/12/15 22:51:23 by hel-bouk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ BONUS_OBJS := $(BONUS:.c=.o)
 all : $(NAME)
 $(NAME) : $(OBJS)
 	    @ar rcs $(NAME) $(OBJS)
-%.o : %.c
+%.o : %.c libft.h
 	 @$(CC) $(CFLAGS) -c $< -o $@
 bonus : $(BONUS_OBJS)
 	    @ar rcs $(NAME) $(BONUS_OBJS)

@@ -6,13 +6,13 @@
 /*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 19:44:26 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/12/15 14:34:30 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/12/15 17:30:14 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_word(char const *str, char c)
+static int	count_word(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -31,7 +31,7 @@ int	count_word(char const *str, char c)
 	return (count);
 }
 
-void	*free_arrays(char **str)
+static void	*free_arrays(char **str)
 {
 	int	i;
 
@@ -52,7 +52,7 @@ void	*free_arrays(char **str)
 	return (NULL);
 }
 
-char	**allocate_split(char **str, char const *s, char c, int nb_word)
+static char	**allocate_split(char **str, char const *s, char c, int nb_word)
 {
 	int	start;
 	int	len;
