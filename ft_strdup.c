@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:21:24 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/12/11 11:03:32 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:23:31 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ char	*ft_strcpy(char *dest, const char *src)
 	return (dest);
 }
 
-char	*ft_strdup(const char *src)
+char	*ft_strdup(const char *s1)
 {
 	char	*dest;
 	int		i;
 
-	i = ft_strlen((char *)src) + 1;
+	i = ft_strlen((char *)s1) + 1;
 	dest = (char *)malloc(sizeof(char) * i);
 	if (!dest)
 		return (NULL);
-	ft_strcpy(dest, src);
+	ft_strcpy(dest, s1);
 	return (dest);
 }

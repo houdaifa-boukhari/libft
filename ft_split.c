@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 19:44:26 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/12/11 19:15:27 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/12/15 14:34:30 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,13 +93,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (str);
 }
-
-/*int main()
-{
-	char **result = ft_split("hello!", ' ');
-	if (!result)
-		return (-1);
-	for(int i = 0; result[i]; i++)
-		printf("%s", result[i]);
-	free_arrays(result);
-}*/

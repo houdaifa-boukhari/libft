@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/21 10:25:31 by hel-bouk          #+#    #+#              #
-#    Updated: 2023/12/12 19:39:15 by hel-bouk         ###   ########.fr        #
+#    Created: 2023/12/10 10:25:31 by hel-bouk          #+#    #+#              #
+#    Updated: 2023/12/14 11:23:27 by hel-bouk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,9 +37,9 @@ $(NAME) : $(OBJS)
 bonus : $(BONUS_OBJS)
 	    @ar rcs $(NAME) $(BONUS_OBJS)
 clean :
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	@$(RM) $(OBJS) $(BONUS_OBJS)
 fclean : clean
-	 $(RM) $(NAME)
+	 @$(RM) $(NAME)
 re : fclean all
 
 .PHONY : all bonus clean fclean re

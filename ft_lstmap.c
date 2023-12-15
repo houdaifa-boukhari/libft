@@ -6,7 +6,7 @@
 /*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/10 13:00:29 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/12/12 18:30:58 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/12/12 22:38:50 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		{
 			del(data);
 			ft_lstclear(&new_list, (*del));
-			return (new_list);
+			return (NULL);
 		}
 		ft_lstadd_back(&new_list, node);
 		lst = lst->next;

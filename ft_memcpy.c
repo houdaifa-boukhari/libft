@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hel-bouk <hel-bouk@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: hel-bouk <hel-bouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 09:22:20 by hel-bouk          #+#    #+#             */
-/*   Updated: 2023/12/12 17:44:39 by hel-bouk         ###   ########.fr       */
+/*   Updated: 2023/12/15 15:25:00 by hel-bouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,17 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*dst;
-	unsigned char	*sourc;
 	size_t			i;
 
-	sourc = (unsigned char *)src;
-	dst = (unsigned char *)dest;
-	if (!dst && !sourc)
-		return (dst);
+	if (!dest && !src)
+		return (dest);
 	i = 0;
 	while (n > i)
 	{
-		dst[i] = sourc[i];
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 		i++;
 	}
-	return (dst);
+	return (dest);
 }
 
 /*test overlaping
