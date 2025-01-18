@@ -1,0 +1,1 @@
+Libft is the first project in the 1337 School curriculum, part of the 42 Network. The goal of this project is to recreate standard C library functions and build a personal library of reusable and robust utility functions.
